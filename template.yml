@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: A sample SAM template for deploying Lambda functions.
+
+Resources:
+ MultiLambdaFunction:
+   Type: AWS::Serverless::Function
+   Properties:
+     Handler: index.lambda_handler
+     Runtime: python3.7
+     CodeUri: ./lambda1
+     FunctionName: 'Multi-lambda-func'
+     Role: 'arn:aws:iam::921553238627:role/service-role/S3Gallery-uploads-batch-notifier1-role-gqfrt48l'
+
+
+ MinusLambdaFunction:
+   Type: AWS::Serverless::Function
+   Properties:
+     Handler: index.lambda_handler
+     Runtime: python3.7
+     CodeUri: ./lambda2
+     FunctionName: 'Minus-lambda-func'
+     Role: 'arn:aws:iam::921553238627:role/service-role/S3Gallery-uploads-batch-notifier1-role-gqfrt48l'
+
+
+ PlusLambdaFunction:
+   Type: AWS::Serverless::Function
+   Properties:
+     Handler: index.lambda_handler
+     Runtime: python3.7
+     CodeUri: ./lambda3
+     FunctionName: 'Plus-lambda-func'
+     Role: 'arn:aws:iam::921553238627:role/service-role/S3Gallery-uploads-batch-notifier1-role-gqfrt48l'
+
