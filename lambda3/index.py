@@ -2,6 +2,7 @@ import json
 from test import add
 
 print('Loading function')
+print('update job')
 a = 2
 b = 2
 

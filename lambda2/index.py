@@ -3,6 +3,7 @@ from test import add
 
 print('Loading function')
 print('Jenkins here')
+print('new job trigger build')
 a = 2
 b = 2
 
