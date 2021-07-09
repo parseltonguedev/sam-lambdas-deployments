@@ -10,10 +10,12 @@ pipeline {
     }
     stage('Build') {
       steps {
+        withAWS(credentials: 'sam-jenkins-demo-credentials', region: 'eu-central-1'){
         unstash 'venv'
         sh 'ls'
         sh 'venv/bin/sam package -t template.yml --s3-bucket bohdan-solianyk-app --output-template-file ./cft.yml'
         //stash includes: '**/.aws-sam/**/*', name: 'aws-sam'
+        }
       }
     }
     stage('beta') {
