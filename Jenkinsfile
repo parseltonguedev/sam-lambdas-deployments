@@ -20,7 +20,7 @@ pipeline {
     }
     stage('beta') {
       environment {
-        STACK_NAME = 'sam-lambdas'
+        STACK_NAME = 'JenkinsTest'
         S3_BUCKET = 'bohdan-solianyk-app'
       }
       steps {
